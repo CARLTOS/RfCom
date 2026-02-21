@@ -16,6 +16,7 @@
 | Antigravity | Visual Redesign (eduAct Reference) | **Done** |
 | Antigravity | Radical Visual Overhaul (Premium & Vibrant) | **Done** |
 | Antigravity | Brand Prominence & GitHub Push | **Done** |
+| Antigravity | Wompi Logo Integration | **Done** |
 
 ## Audit Report
 * 👁️ Visual Score [10/10]

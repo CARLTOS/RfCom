@@ -115,12 +115,9 @@ export default function Home() {
                 <div className="flex items-center gap-5">
                   <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center p-2 shadow-inner overflow-hidden">
                     <img
-                      src="https://wompi.co/wp-content/uploads/2021/05/logo-wompi.png"
+                      src="/logo-wompi.png"
                       alt="Wompi"
-                      className="w-full h-auto object-contain scale-125"
-                      onError={(e) => {
-                        e.currentTarget.src = "https://assets.wompi.co/img/wompi-logo.svg";
-                      }}
+                      className="w-full h-auto object-contain"
                     />
                   </div>
                   <div>

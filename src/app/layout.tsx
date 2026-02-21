@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { AosInit } from "@/components/AosInit";
+import Script from "next/script";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -22,6 +23,10 @@ export default function RootLayout({
   return (
     <html lang="es" className="dark" suppressHydrationWarning>
       <body className={`${poppins.variable} min-h-screen relative overflow-x-hidden`}>
+        <Script
+          src="https://checkout.wompi.co/widget.js"
+          strategy="lazyOnload"
+        />
         <AosInit />
         {/* Background glow effects */}
         <div className="fixed inset-0 z-0 pointer-events-none">

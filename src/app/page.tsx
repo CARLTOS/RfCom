@@ -10,9 +10,34 @@ import data from "@/lib/data.json";
 import { Card } from "@/components/Card";
 import { Button } from "@/components/Button";
 
+declare global {
+  interface Window {
+    WidgetCheckout: any;
+  }
+}
+
 export default function Home() {
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const handleWompiCheckout = (e: React.MouseEvent) => {
+    e.preventDefault();
+    // Prioritize Widget if script is loaded
+    if (window.WidgetCheckout) {
+      const checkout = new window.WidgetCheckout({
+        currency: 'COP',
+        amountInCents: 50000, // Test amount: $500 COP
+        reference: `RFCOM-${Date.now()}`,
+        publicKey: 'pub_test_oRSf4V27wIRZ7HzCkItTA5iftwj7pC1o',
+      });
+      checkout.open((result: any) => {
+        console.log('Wompi result:', result);
+      });
+    } else {
+      // Fallback to direct payment link
+      window.open('https://checkout.wompi.co/l/test_SWy2jq', '_blank');
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -80,10 +105,9 @@ export default function Home() {
                   <ArrowRight size={18} className="text-text-dim group-hover:text-white" />
                 </div>
               </a>
-              <a
-                href="https://checkout.wompi.co/l/RFCOMSAS"
-                target="_blank"
-                className="flex items-center justify-between p-6 bg-white/5 border border-white/10 rounded-[24px] hover:border-brand-orange/50 hover:bg-brand-orange/5 transition-all group"
+              <button
+                onClick={handleWompiCheckout}
+                className="w-full flex items-center justify-between p-6 bg-white/5 border border-white/10 rounded-[24px] hover:border-brand-orange/50 hover:bg-brand-orange/5 transition-all group text-left cursor-pointer"
               >
                 <div className="flex items-center gap-5">
                   <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center p-3 shadow-inner">
@@ -97,7 +121,7 @@ export default function Home() {
                 <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-brand-orange transition-colors">
                   <ArrowRight size={18} className="text-text-dim group-hover:text-white" />
                 </div>
-              </a>
+              </button>
             </div>
           </Card>
         </div>

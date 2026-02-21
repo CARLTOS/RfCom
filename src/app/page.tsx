@@ -87,7 +87,7 @@ export default function Home() {
             </button>
             <div className="text-center mb-10">
               <h3 className="text-3xl font-black mb-2 text-gradient-orange">Caja RFCOM</h3>
-              <p className="text-text-secondary text-sm">Selecciona tu método de pago preferido</p>
+              <p className="text-text-secondary text-[10px] uppercase tracking-[0.2em] opacity-50">Versión 2.1 - Conexión Wompi</p>
             </div>
             <div className="grid gap-4">
               <a
@@ -115,12 +115,11 @@ export default function Home() {
                 <div className="flex items-center gap-5">
                   <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center p-2 shadow-inner overflow-hidden">
                     <img
-                      src="https://assets.wompi.co/img/wompi-logo.svg"
+                      src="https://wompi.co/wp-content/uploads/2021/05/logo-wompi.png"
                       alt="Wompi"
-                      className="w-full h-auto object-contain"
+                      className="w-full h-auto object-contain scale-125"
                       onError={(e) => {
-                        // Fallback if the logo fails to load
-                        e.currentTarget.src = "https://wompi.co/wp-content/uploads/2021/05/logo-wompi.png";
+                        e.currentTarget.src = "https://assets.wompi.co/img/wompi-logo.svg";
                       }}
                     />
                   </div>

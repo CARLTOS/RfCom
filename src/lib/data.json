@@ -1,0 +1,64 @@
+{
+  "plans": [
+    {
+      "megas": "30 Mbps",
+      "features": [
+        "Simétrico",
+        "Equipo en comodato",
+        "Soporte Técnico",
+        "IPTV -",
+        "App +Media TV"
+      ],
+      "tv": "Compatible con iOS, AndroidTV, Amazon Firestick"
+    },
+    {
+      "megas": "40 Mbps",
+      "features": [
+        "Simétrico",
+        "Equipo en comodato",
+        "Soporte Técnico",
+        "IPTV -",
+        "App +Media TV"
+      ],
+      "tv": "Compatible con iOS, AndroidTV, Amazon Firestick"
+    },
+    {
+      "megas": "50 Mbps",
+      "features": [
+        "Simétrico",
+        "Equipo en comodato",
+        "Soporte Técnico",
+        "IPTV -",
+        "App +Media TV"
+      ],
+      "tv": "Compatible con iOS, AndroidTV, Amazon Firestick"
+    },
+    {
+      "megas": "60 Mbps",
+      "features": [
+        "Simétrico",
+        "Equipo en comodato",
+        "Soporte Técnico",
+        "IPTV -",
+        "App +Media TV"
+      ],
+      "tv": "Compatible con iOS, AndroidTV, Amazon Firestick"
+    },
+    {
+      "megas": "100 Mbps",
+      "features": [
+        "Simétrico",
+        "Equipo en comodato",
+        "Soporte Técnico",
+        "IPTV -",
+        "App +Media TV"
+      ],
+      "tv": "Compatible con iOS, AndroidTV, Amazon Firestick"
+    }
+  ],
+  "system": {
+    "version": "1.1.1",
+    "status": "online",
+    "whatsapp": "https://wa.me/573218935393"
+  }
+}

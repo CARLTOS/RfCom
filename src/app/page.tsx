@@ -29,12 +29,15 @@ export default function Home() {
         amountInCents: 50000, // Test amount: $500 COP
         reference: `RFCOM-${Date.now()}`,
         publicKey: 'pub_test_oRSf4V27wIRZ7HzCkItTA5iftwj7pC1o',
+        // Using the integrity secret provided
+        signature: { integrity: 'test_integrity_AF9XYCcqX8r0J1LqRq2a2M07QCetxlc2' },
+        redirectUrl: 'https://rfcom-app.vercel.app', // You can change this to your actual Vercel URL
       });
       checkout.open((result: any) => {
         console.log('Wompi result:', result);
       });
     } else {
-      // Fallback to direct payment link
+      // Fallback to the specific test payment link provided by the user
       window.open('https://checkout.wompi.co/l/test_SWy2jq', '_blank');
     }
   };
@@ -110,8 +113,16 @@ export default function Home() {
                 className="w-full flex items-center justify-between p-6 bg-white/5 border border-white/10 rounded-[24px] hover:border-brand-orange/50 hover:bg-brand-orange/5 transition-all group text-left cursor-pointer"
               >
                 <div className="flex items-center gap-5">
-                  <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center p-3 shadow-inner">
-                    <img src="https://wompi.com/assets/img/logo-wompi.svg" alt="Wompi" className="w-full h-full object-contain" />
+                  <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center p-2 shadow-inner overflow-hidden">
+                    <img
+                      src="https://assets.wompi.co/img/wompi-logo.svg"
+                      alt="Wompi"
+                      className="w-full h-auto object-contain"
+                      onError={(e) => {
+                        // Fallback if the logo fails to load
+                        e.currentTarget.src = "https://wompi.co/wp-content/uploads/2021/05/logo-wompi.png";
+                      }}
+                    />
                   </div>
                   <div>
                     <h4 className="font-bold text-lg text-white">Wompi</h4>
